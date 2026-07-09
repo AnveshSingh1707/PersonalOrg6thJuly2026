@@ -1,0 +1,175 @@
+<apex:page controller="LeadRegistrationFormCtrl" docType="html-5.0" sidebar="false" showHeader="false">
+    <html>
+        <head>
+            <title>
+                Lead Registration Form
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta charset="UTF-8"/>
+            <apex:slds />
+            <apex:includeScript value="{!$Resource.RegistrationForm}"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src='https://code.jquery.com/jquery-git.js'></script>
+            <!--<link class="jsbin" href="" rel="stylesheet" type="text/css" />-->
+            <!--<apex:stylesheet value="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"/>-->
+            <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+            <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        </head>
+        <style>
+            #inputFileBorder{
+                border: 1px solid black; 
+                color:purple; 
+                padding: 22px; 
+                height: 130px; width: 140px; 
+                text-align: center; 
+                word-wrap: break-word;     
+            }
+            .upload-image-preview img{
+                width: 100%;
+                height:  100%;
+            }
+            .slds-button_success{
+                    
+            }
+            .fileType {
+                display: block;
+                position: relative;
+                width: 150px;
+                margin: auto;
+                cursor: pointer;
+                border: 0;
+                height: 33px;
+                border-radius: 5px;
+                outline: 0;
+            }
+            .fileType:hover:after {
+                background: #FF1111;
+            }
+            .fileType:after {
+                transition: 200ms all ease;
+                border-bottom: 3px solid rgba(0,0,0,.2);
+                background: #000000;
+                background-image:url('http://i.stack.imgur.com/CVpp3.jpg');
+                text-shadow: 0 2px 0 rgba(0,0,0,.2);
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                content: 'Upload Photo';
+                padding: 8px;
+                /*line-height: 60px;*/
+                border-radius: 5px;
+            }
+        </style>
+        <body id="leadGenerationBody">
+            <apex:form >
+                <div id="mainDiv" class="slds-box slds-m-around_x-small">
+                    <div id="registrationHeading" >
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div id="childsPlayLogo">
+                                    <apex:image url="{!URLFOR($Resource.RegistrationForm,'ChildsPlay/childsplayLogo.jpg')}" width="200" height="100"/>      
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <b>Registration Form</b>
+                                </div>
+                            </div>
+                            <div id="photoUpload">
+                            <div class="slds-clearfix">
+                                <div class="slds-float_right">
+                                    <div id="inputFileBorder" class="upload-image-preview slds-m-around_xx-small">
+                                        PLEASE 
+                                        ATTACH A 
+                                        PASSPORT SIZE
+                                        PHOTOGRAPH
+                                    </div>
+                                    <apex:inputFile value="{!cv.VersionData}" fileName="{!cv.Title}" styleclass="inputContentVersion fileType"/>
+                                    <apex:inputHidden value="{!fileExtension}" id="hiddenExtn"/>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="slds-m-around_xx-small slds-box" id="detailsDiv">
+                        <apex:outputPanel id="mainPanel" layout="block">
+                            <div id="childDetailsDiv">
+                                <apex:outputPanel id="ChildInfo">
+                                    <div id="ProductInfoSection" class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme_shade custom-title">
+                                            <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Child Details</span>
+                                        </h3>
+                                        <div aria-hidden="false" class="slds-section__content">
+                                            <div class="slds-box slds-m-vertical_small">
+                                               <div class="slds-grid slds-wrap">
+                                                   <!--<div class="slds-col slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1"> -->
+                                                        <!--<div class="slds-grid slds-wrap">-->
+                                                           <apex:repeat value="{!ChildDetails}" var="childDtls">
+                                                               <div class="slds-col slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2">
+                                                                   <div class="slds-form slds-form_stacked slds-m-horizontal_small">
+                                                                        <div class="slds-form-element">                                                                                
+                                                                            <label class="slds-form-element__label" style="font-weight:500; font-size:12px;">
+                                                                                {!childDtls.Label}
+                                                                                <apex:outputPanel rendered="{!OR(childDtls.required,childDtls.dbRequired)}">
+                                                                                   <abbr class="slds-required" title="required">*</abbr>
+                                                                                </apex:outputPanel>
+                                                                            </label>
+                                                                            <div class="slds-form-element__control">
+                                                                                <apex:inputField value="{!leadRecord[childDtls.fieldPath]}"  required="{!OR(childDtls.required,childDtls.dbRequired)}" styleClass="slds-input {!childDtls.fieldPath}"/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                               </div>
+                                                           </apex:repeat>
+                                                           <div class="slds-col slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2">
+                                                           </div>
+                                                       <!--</div>-->
+                                                   <!--</div>-->
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </div>
+                        </apex:outputPanel>
+                    </div>
+                    <div class="slds-m-around_x-small sld-box" id="buttonDiv">
+                        <!--<apex:actionRegion >-->
+                            <div class="slds-align_absolute-center">
+                                <!--<apex:commandButton action="{!Submit}" value="Submit" styleClass="slds-button slds-button_success"/>  -->
+                            </div>
+                        <!--</apex:actionRegion>-->
+                    </div>
+                </div>
+            </apex:form>
+        </body>
+        <script>
+            var j$ = $.noConflict();
+            j$(document).ready(function(){
+                
+            });
+            j$(".inputContentVersion").change(function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    console.log('file new',this.files[0]);
+                    var fileName = this.files[0].name;
+                    console.log('fileName',fileName);
+                    var fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+                    reader.onload = function (e) {
+                        var img = j$('<img>').attr('src', e.target.result);
+                        j$('.upload-image-preview').html(img);
+                    };
+            
+                    reader.readAsDataURL(this.files[0]);
+                }
+                j$("#inputFileBorder").css("padding","2px");
+                j$("[id*='hiddenExtn']").val(fileExtension);
+                
+            });
+        </script>
+    </html>
+</apex:page>

@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<c:reUsableMultiSelectLookup objectAPIName="product"
+                               IconName="standard:product"
+                               lstSelectedRecords="{!v.selectedLookUpRecords}"
+                               label="Type Product Name"/>
+</aura:component>

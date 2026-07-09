@@ -1,0 +1,15 @@
+<apex:component >
+    <script>
+    function renderTheText(){
+       var check = document.getElementById("checkbox").value; 
+        if(check==true){
+        document.getElementById("message").innerHTML="True";
+        }else{
+        document.getElementById("message").innerHTML="False";
+        }
+    }
+    
+    </script>
+    <apex:slds />
+    <apex:inputCheckbox onselect="renderTheText()" id="checkbox"/>
+</apex:component>

@@ -1,0 +1,73 @@
+@isTest
+global class MockHttpResponseGenerator implements HttpCalloutMock {
+    // Implement this interface method
+    global HTTPResponse respond(HTTPRequest req) {
+        
+        System.assertEquals('http://example.com/example/test', req.getEndpoint());
+        System.assertEquals('GET', req.getMethod());
+        
+        // Create a fake response
+        HttpResponse res = new HttpResponse();
+        res.setHeader('Content-Type', 'application/json');
+        res.setBody('"results" : ['
+      +'{'
+         +'"address_components" : ['
+         +'   {'
+         +'      "long_name" : "Miami",'
+         +'      "short_name" : "Miami",'
+         +'      "types" : [ "locality", "political" ]'
+         +'   },'
+         +'   {'
+         +'      "long_name" : "Miami-Dade County",'
+         +'      "short_name" : "Miami-Dade County",'
+         +'      "types" : [ "administrative_area_level_2", "political" ]'
+         +'   },'
+         +'   {'
+         +'      "long_name" : "Florida",'
+         +'      "short_name" : "FL",'
+         +'      "types" : [ "administrative_area_level_1", "political" ]'
+         +'   },'
+         +'   {'
+         +'      "long_name" : "United States",'
+         +'      "short_name" : "US",'
+         +'      "types" : [ "country", "political" ]'
+         +'   }'
+         +'],'
+         +'"formatted_address" : "Miami, FL, USA",'
+         +'"geometry" : {'
+         +'   "bounds" : {'
+         +'      "northeast" : {'
+         +'         "lat" : 25.855773,'
+         +'         "lng" : -80.139157'
+         +'      },'
+         +'      "southwest" : {'
+         +'         "lat" : 25.709042,'
+         +'         "lng" : -80.31975989999999'
+         +'      }'
+         +'   },'
+         +'   "location" : {'
+         +'      "lat" : 25.7616798,'
+         +'      "lng" : -80.1917902'
+         +'   },'
+         +'   "location_type" : "APPROXIMATE",'
+         +'   "viewport" : {'
+         +'      "northeast" : {'
+         +'         "lat" : 25.855773,'
+         +'         "lng" : -80.139157'
+         +'      },'
+         +'      "southwest" : {'
+         +'         "lat" : 25.709042,'
+         +'         "lng" : -80.31975989999999'
+         +'      }'
+         +'   }'
+        +' },'
+        +' "place_id" : "ChIJEcHIDqKw2YgRZU-t3XHylv8",'+''
+        +' "types" : [ "locality", "political" ]'
+      +'}'
+   +'],'
+   +'"status" : "OK"'
++'}');
+        res.setStatusCode(200);
+        return res;
+    }
+}

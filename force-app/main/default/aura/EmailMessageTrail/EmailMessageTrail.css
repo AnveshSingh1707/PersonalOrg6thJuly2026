@@ -1,0 +1,9 @@
+.THIS .slds-timeline__item_comment:before {
+    background: #f9e496;
+}
+.THIS .slds-theme_shade.comment {
+    background: #fffac3
+}
+.THIS .slds-timeline__trigger:hover {
+    background-color: none!important;
+}

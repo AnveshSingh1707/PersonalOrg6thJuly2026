@@ -1,0 +1,26 @@
+<apex:page standardController="Contact">
+    <html>
+    <script>
+
+
+    </script>
+
+    <body>
+        
+        <apex:pageBlock >
+        <apex:form >    
+                <apex:inputField value="{!Contact.Color__c}" id="colorId" />
+        </apex:form>    
+            <div>
+                When the value of the picklist changes the color should also change in the squareBox
+            </div>
+            <div id="squareBox" style="width:20px; margin-left:0.3cm; margin-top:0.3cm; height:20px; border:1px solid black; float:left;">
+
+            </div>
+        </apex:pageBlock>
+        
+    </body>
+
+    </html>
+
+</apex:page>

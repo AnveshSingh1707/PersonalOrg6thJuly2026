@@ -1,0 +1,19 @@
+<apex:page standardController="Case" extensions="listViewTestPage" action="{!go}">
+    <apex:form >
+        <apex:slds />
+        <div class="slds-box">
+            <apex:inputText html-placeholder="Search.." label="SObject" styleClass="inputSearch slds-input slds-col slds-size_1-of-7" style="margin: 0px 0px 10px 0px;" value="{!sObjectTypeValue}"/>
+            <apex:commandButton styleClass="slds-button-brand" action="{!listOfSobjects}" value="Search"/>
+        </div>
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <apex:selectList id="select-01" value="{!selectedValue}" styleClass="slds-select slds-col slds-size_1-of-7" multiselect="false" size="1">
+                        <apex:selectOptions value="{!listViewData}"></apex:selectOptions>
+                    </apex:selectList>
+                    <!--<apex:inputText value="{!searchKeyString}"  html-placeholder="Search.." styleClass=" slds-input slds-col slds-size_1-of-7" style="margin: 0px 0px 10px 0px;" onkeyup="{!searchByDiffMethod}" rendered="{!If(selectedValue!='None',true,false)}"/>-->
+                </div>
+            </div>
+        </div>   
+    </apex:form>   
+</apex:page>

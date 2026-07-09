@@ -1,0 +1,77 @@
+<apex:page standardController="Contact" extensions="AddColorExtension" applyBodyTag="false" applyHtmlTag="false" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+     <!-- JS function to invoke controller method-->
+    <script type="text/javascript">
+    var   AdminCOnsoleID = "{!Contact.id}";
+ 
+       function saveColorCode(code){       
+ 
+           // alert(code);
+      Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.AddColorExtension.saveColor}',
+            AdminCOnsoleID, code,
+            function(result, event){
+             if (event.status) {
+                 //do something here
+                 // console.log('Oh Ya');
+             }
+            },
+          {escape: true}
+      );
+    }
+   
+    </script>
+    <html>
+        <body>
+            <apex:form >
+                Select a Color : 
+                <input type="color" id="myColor"  onchange="saveColorCode(this.value);" value= "{!Contact.Color__c}"/>
+                <br/>
+                <apex:commandButton value="Submit" action="{!Save}"/>
+            </apex:form>
+        </body>
+        <style>
+            p{
+            font-family: monospace;
+            font-size: 12px;
+            font-weight: bold;
+            }
+            input[type="text"]{
+            height: 10px;
+            width: 75px;
+            padding: 5px;
+            }
+            input[type="color"]{
+            height: 30px;
+            background-color: lightgrey;
+            width: 70px;
+            outline: none;
+            border: 1px solid #fff;
+            }
+            button{
+            color: #3a3939;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color: #333;
+            margin: 1px;
+            padding: 5px 3px;
+            border: 1px solid #b5b5b5;
+            border-bottom-color: #7f7f7f;
+            background: #e8e8e9 url(/img/alohaSkin/btn_sprite.png) repeat-x right top;
+            font-weight: bold;
+            font-size: 0.7em;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            }
+        </style>
+    </html>
+</apex:page>

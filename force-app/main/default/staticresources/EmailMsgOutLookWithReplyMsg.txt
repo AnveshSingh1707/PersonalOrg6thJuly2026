@@ -1,0 +1,2 @@
+{"email_message":"Outlook with a reply directly above line\n________________________________________\nFrom: CRM Comments [crm-comment@example.com]\nSent: Friday, 23 March 2012 5:08 p.m.\nTo: John S. Greene\nSubject: [contact:106] John Greene\nA new comment has been added to the Contact named John Greene:\nI am replying to a comment."
+}

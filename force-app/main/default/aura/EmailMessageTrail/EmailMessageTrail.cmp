@@ -1,0 +1,68 @@
+<aura:component description="DeskMigratedCaseInteractions" controller="DeskMigratedCaseInteractions" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+
+    <aura:attribute name="case" type="Case" />
+    <aura:attribute name="wrappers" type="Object[]" />
+    <force:recordData aura:id="caseService" recordId="{!v.recordId}" targetRecord="{!v.case}" recordUpdated="{!c.doInit}" layoutType="FULL"/>
+
+    <lightning:card iconName="custom:custom24" title="Case Interactions - Timeline">
+        <div class="slds-p-left_medium slds-p-right_medium">
+            <ul class="slds-timeline">
+                <aura:iteration items="{!v.wrappers}" var="item" indexVar="i">
+                    <li>
+                        <div class="{! 'slds-timeline__item_expandable slds-is-open slds-timeline__item_' + item.intType}">
+                            <span class="slds-assistive-text">email</span>
+                            <div class="slds-media">
+                                <aura:if isTrue="{!item.intType == 'email'}">
+                                    <div class="slds-media__figure">
+                                        <lightning:icon iconName="utility:switch" class="slds-button slds-button_icon" size="xx-small" variant="switch" body="test"></lightning:icon>
+                                        <lightning:icon iconName="standard:email" class="slds-icon_container slds-icon-standard-email slds-timeline__icon" size="small" variant="email" />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div class="slds-media__figure">
+                                            <lightning:icon iconName="utility:switch" class="slds-button slds-button_icon" size="xx-small" variant="switch" body="test"/>
+                                            <lightning:icon iconName="standard:note" class="slds-icon_container slds-icon-standard-note slds-timeline__icon" size="small" variant="new_note" />
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                                <div class="slds-media__body">
+                                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                            <aura:if isTrue="{!item.intType == 'email'}">
+                                                <h3 class="slds-truncate" title="{!item.em.Subject}">
+                                                    <strong>{!item.em.Subject}</strong>
+                                                </h3>
+                                                <aura:set attribute="else">
+                                                    <h3 class="slds-truncate" title="Case Comment">
+                                                        <strong>Case Comment</strong>
+                                                    </h3>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                            <p class="slds-timeline__date">
+                                                <ui:outputDateTime value="{!item.d}" />
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="slds-m-horizontal_xx-small">
+                                        <!--{!item.intType}-->
+                                    </p>
+                                    <article class="{! 'slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium' + ' ' + item.intType}" aria-hidden="false">
+                                        <div>
+                                            <span class="slds-text-title"></span>
+											<span class="slds-text-title">Message:</span>
+                                            <aura:unescapedHtml value="{!item.body}"/>
+                                            <!--<p class="slds-p-top_x-small">{!item.body}</p>-->
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </lightning:card>
+</aura:component>

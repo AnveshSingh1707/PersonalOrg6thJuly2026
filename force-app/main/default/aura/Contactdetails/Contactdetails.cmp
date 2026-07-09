@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      />
+    <!-- Display a Records-->
+    <div class="slds-page-header" role="banner">
+        <p class=" slds-page-header__title">{!v.simpleRecord.Name}</p>
+        <h3 class=" slds-text-heading_label slds-m-right_small
+                   slds-truncate slds-align-left">PHONE- {!v.simpleRecord.Phone},<br/>EMAIL- {!v.simpleRecord.Email}</h3>
+    </div>
+</aura:component>

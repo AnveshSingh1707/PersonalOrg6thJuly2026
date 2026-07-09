@@ -1,0 +1,105 @@
+<aura:component controller="ReUsableMultiSelectLookupCtrl">
+    
+    <!--declare attributes--> 
+    <aura:attribute name="lstSelectedRecords" type="sObject[]" default="[]" description="Use,for store SELECTED sObject Records"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Use,for store the list of search records which returns from apex class"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="objectAPIName" type="string" default=""/>
+    <aura:attribute name="IconName" type="string" default=""/>
+    <aura:attribute name="label" type="string" default=""/>
+    
+    <!--declare events hendlers-->  
+    <aura:handler name="oSelectedRecordEvent" event="c:selectedsObjectRecordsEvent" action="{!c.handleComponentEvent}"/>
+    <aura:attribute name="Message" type="String" default=""/>
+    
+    <!-- https://www.lightningdesignsystem.com/components/lookups/ --> 
+    
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close slds-box">
+        <label class="slds-form-element__label">{!v.label}</label>
+        <!--This part is for display search bar for lookup-->  
+        <div class="slds-form-element__control">
+            <div class="slds-input-has-icon slds-input-has-icon--right">
+                <!-- This markup is for when an record is selected -->
+                <div aura:id="lookup-pill" class="slds-pill-container">
+                    <div aura:id="lookupField" class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"  style="width: 100%;">
+                        
+                        <ui:inputText click="{!c.onfocus}"
+                                      updateOn="keyup"
+                                      keyup="{!c.keyPressController}"
+                                      class="slds-lookup__search-input slds-input inputSize"
+                                      value="{!v.SearchKeyWord}"
+                                      placeholder="search.."/>
+                        
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            <lightning:icon iconName="utility:search" size="x-small" alternativeText="icon"/>
+                        </span>
+                    </div> 
+                <!--Selected Records Pills Section-->
+                    <aura:iteration items="{!v.lstSelectedRecords}" var="sr">
+                        <lightning:pill class="slds-m-around_xx-small" label="{!sr.prodRecord.Name}" name="{!sr.prodRecord.Id}" onremove="{! c.clear }">
+                            <aura:set attribute="media">
+                                <lightning:icon iconName="{!v.IconName}" size="x-small" alternativeText="icon"/>
+                            </aura:set>
+                        </lightning:pill>
+                    </aura:iteration>
+                </div>
+            </div>
+        </div>
+ 
+        <!--This part is for Display typehead lookup result List-->  
+        <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+            <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+            <center> {!v.Message}</center>
+            <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                <!--Child Component--> 
+                <c:reUsableMultiSelectLookupResult oRecord="{!singleRec}" IconName="{!v.IconName}"/>
+            </aura:iteration>
+        </ul>
+    </div>
+    <div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+           <thead>
+              <tr class="slds-line-height_reset">
+                 <th class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Product Name</div>
+                 </th>
+                 <th class="" scope="col">
+                    <div class="slds-truncate" title="Account Name">Cost Price</div>
+                 </th>
+                 <th class="" scope="col">
+                    <div class="slds-truncate" title="Close Date">Quantity</div>
+                 </th>
+                 <th class="" scope="col">
+                    <div class="slds-truncate" title="Stage">Final Amount</div>
+                 </th>
+                 
+              </tr>
+           </thead>
+           <tbody>
+               
+                <aura:iteration items="{!v.lstSelectedRecords}" var="sr" indexVar="index">
+                    
+              <tr class="slds-hint-parent">
+                 <td data-label="Account Name">
+                    <div class="slds-truncate" title="">{!sr.prodRecord.Name}</div>
+                 </td>
+                 <td data-label="Close Date">
+                    <div class="slds-truncate" title="">
+                        <lightning:input title="{!index}" step="0.01" type="number" rowIndex="{!index}" name="input1"   class="{!sr.Id + '_CostPricecls'}"  value="{!sr.prodRecord.Cost__c}" onchange="{!c.OnChangeCostPriceORQty}" />
+                     </div>
+                 </td>
+                 <td data-label="Prospecting">
+                    <div class="slds-truncate" title="">
+                        <lightning:input title="{!index}" type="number" name="input1" rowIndex="{!index}"   class="{!sr.Id + '_Quantitycls'}"  value="{!sr.prodRecord.Current_Inventory__c}" onchange="{!c.OnChangeCostPriceORQty}"/>
+                     </div>
+                 </td>
+                 <td data-label="Confidence">
+                    <div class="slds-truncate" title="">
+                        <lightning:input type="number" name="input1" rowIndex="{!index}"  class="{!sr.Id + '_FinalAmountcls'}"  value="{!sr.finalAmount}" disabled="true"/></div>
+                 </td>
+              </tr>
+               </aura:iteration>
+           </tbody>
+        </table>
+    </div>
+</aura:component>

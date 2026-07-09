@@ -1,0 +1,113 @@
+<apex:page title="Anvesh Singh" controller="ResumeCtrl" docType="html-5.0" sidebar="false" showHeader="false">
+    <html >
+        <head>
+            <apex:slds />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta charset="UTF-8"/>
+            <apex:slds />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <apex:stylesheet value="{!URLFOR($Resource.MyResumeCSS, '')}"/>
+            <style>
+                
+            </style>
+        </head>
+        <body>
+            <div id="myResumeMainDiv" class="slds-m-around_large">
+                <div id="headerMain" class="slds-box">
+                    <div class="slds-page-header slds-align_absolute-center">
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__body">
+                                        <div class="slds-page-header__name">
+                                            <div class="slds-page-header__name-title">
+                                                <h1 class="">
+                                                    <span class="slds-page-header__title slds-truncate slds-text-heading_large" title="My Resume">Anvesh Singh</span>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        <p class="slds-page-header__name-meta">Resume</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="insideBodyDiv" class="slds-box slds-m-top_small">
+                    <apex:outputPanel id="resumeDetailPnl" rendered="{!isRead}" layout="none">
+                        <div id="myDetail" class="slds-grid slds-wrap">
+                            <div class="slds-text-heading_small slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2">
+                                Anvesh Singh <br/>
+                                Phone: +917827848101 <br/>
+                                Mailto: <a href="mailto:anveshsingh.417@gmail.com?Subject=Congratulations" target="_blank">anveshsingh.417@gmail.com</a>
+                            </div>
+                            <div id="certificationslistAdm" class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-8">
+                               <div id="admin">
+                                   <apex:image url="{!URLFOR($Resource.certification_Images, '/Certifications/adm201.jpg')}" width="100" height="100"/> 
+                               </div>
+                           </div>
+                           <div id="certificationslistPd1" class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-8">
+                               <div id="pd1">
+                                   <apex:image url="{!URLFOR($Resource.certification_Images, '/Certifications/dev401.png')}" width="100" height="100"/>
+                               </div>
+                           </div>
+                           <div id="certificationslistAdmPardot" class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-8">
+                               <div id="pardotspecialist">
+                                   <apex:image url="{!URLFOR($Resource.certification_Images, '/Certifications/pardotspecialist.png')}" width="200" height="200"/>
+                               </div>
+                           </div>
+                        </div>
+                        <div id="overview">
+                            <p class="objective_span"><strong>Objective</strong></p>
+                            <p><span style="font-weight: 400;">To build my career with a company focused on quality, dedication and ingenuity, where in I can get opportunities to learn, utilize my potential to the fullest and have ample scope for development. Additionally, to obtain a position enabling me to utilize my strong communication and leadership skills that offers growth and advancement opportunities.</span></p>
+                            <p>&nbsp;</p>
+                            <p><strong>Overview</strong></p>
+                            <ul>
+                            <li class="overview_li" ><span class="overview_span">7 plus years of progressive experience of with top most consulting firm in UK and India. For past 6 months working for Accenture handling multiple projects and training responsibilities. Having worked for more than 2 years in Deloitte India Private Limited and 4 years with largest IT service provider Tata Consultancy Services (TCS) primarily focusing on banking, financial, customer and services sectors</span></li>
+                            <li class="overview_li"><span class="overview_span">Experience in all the stages of SDLC such as architecture design, application development, deployment, post production support, change management and customer service</span></li>
+                            <li class="overview_li"><span class="overview_span">Extensive experience in Agile based Development Life Cycle</span></li>
+                            <li class="overview_li"><span class="overview_span">Deep hands on experience in Salesforce Sales, Service, Marketing and Force.Com platforms&nbsp;</span></li>
+                            <li class="overview_li"><span class="overview_span">Experience in Force.com platform configuration and customization like Apex, Visualforce, Integration, Workflows and Approval process configuration, Custom Reports and Dashboards, Customer Portal, Sites and Communities</span></li>
+                            <li class="overview_li"><span class="overview_span">Experience with tools such as Eclipse, Force.com, GIT, Jenkins, Bamboo, ANT, Microsoft Visual Studio Team Services etc.</span></li>
+                            <li class="overview_li"><span class="overview_span">Have been a part of recruiting panelist for conducting technical interviews during recruitment process for Analyst and Consultant resources in Deloitte Digital.</span></li>
+                            <li class="overview_li"><span class="overview_span">Key architect for implementing Salesforce Marketing Resource Management for world&rsquo;s leader in Telecommunications Services Company.</span></li>
+                            </ul>
+                            <p><br /><br /></p>
+                            <p><strong>Summary</strong></p>
+                            <p><span class="Summary_span">Currently working as a Senior Salesforce Consultant and Developer in Accenture for around 6 months on force.com implementation, business analyst and configuration on cloud based CRM for different customers.&nbsp;</span></p>
+                            <p><span class="Summary_span">I have worked closely with project stakeholders, to understand the requirements and specifications for new enhancement in applications with minimal customization along with re-engineering the existing applications. In Deloitte, </span><span style="font-weight: 400;">I </span><span style="font-weight: 400;">have progressively building marketing cloud and social studio capability for Deloitte Digital across different locations. I have received an applause award for architecting and integrating SFDC with Big Machine for automating quoting processes which was handled natively in Big Machine resulting in increased user adoption for US based large enterprise content management company.</span></p>
+                            <p>&nbsp;</p>
+                            <p><strong>Certifications</strong></p>
+                            <p>&nbsp;</p>
+                            <ul>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce.com Certified Force.com Developer (WI12)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce.com Certified Administrator (SP13)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce Certified Sales Cloud Consultant (SU16)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce Certified Service Cloud Consultant (WI17)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce Certified Platform App Builder - Transition Exam (SP17)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Salesforce Certified Platform Developer 1</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">STeLA - Salesforce Technology Leadership Academy held in Ireland (Deloitte)</span></li>
+                            <li class="Certifications_li"><span class="Certifications_span">Lean Six Sigma Project &ndash;Code Optimization in Salesforce</span></li>
+                            </ul>
+                            <p>&nbsp;</p>
+                            <p><strong>Skill Set</strong></p>
+                            <p><strong>Software Skills:</strong></p>
+                            <p><span class="skillSet_Span">Programming Language &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Apex, Visualforce, Integration,CPQ</span></p>
+                            <p><span class="skillSet_Span">Technology </span> 
+                            <span class="skillSet_Span">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Salesforce.com &ndash; Cloud computing, Google API, Analytics API</span></p>
+                            <p><span class="skillSet_Span">DevOps&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Eclipse, Force.com, Selenium, ANT, Jenkins, BIT Bucket, Source Tree,&nbsp;&nbsp;</span></p>
+                            <p><span class="skillSet_Span">&nbsp; &nbsp; ForceReviewer, VSTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                            <p><span class="skillSet_Span">App Exchange Tools &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Conga Composer, Postcode Anywhere, Rollup Summary Tool, MRM&nbsp;</span></p>
+                            <p><span class="skillSet_Span">Mobile Apps</span> 
+                            <span class="skillSet_Span">&nbsp; &nbsp; &nbsp; - Salesforce Classic, Salesforce1</span></p>
+                            <p><span class="skillSet_Span">Others &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - RFPs , Salesforce Trainings</span></p>
+                            <p>&nbsp;</p>
+                            <p><strong>Tools:</strong></p>
+                            <p><span class="skillSet_Span">Force.com IDEs, Mavensmate and Sublime ,HP-QC, HP-ALM, Salesforce Data loader, Force Explorer, Visual Studio</span></p>    
+                        </div>
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

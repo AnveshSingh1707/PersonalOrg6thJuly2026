@@ -1,0 +1,152 @@
+<apex:page controller="ContactSearchCntl" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0"> <!--showHeader="false" applyHtmlTag="false"-->
+    <apex:pageMessages id="pageMsg"/>
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <apex:includeScript value="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8I5kKWt3hHEFuNNJZfLsqqkh7R7n0NQk&libraries=places"/>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>Contact Search</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+        </head>
+        <body>
+            <div class="slds-scope">
+                <apex:form >
+                    <!-- Filter Section -->
+                    <div class="slds-section slds-is-open slds-p-around_x-small">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-truncate slds-p-horizontal_small" title="Filters">Filters</span>
+                        </h3>
+                        <div aria-hidden="false" class="slds-section__content">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="radiusPicklist">Radius</label>
+                                        <div class="slds-form-element__control">
+                                            <apex:selectList label="Radius" size="1" value="{!selectedRadius}" styleClass="slds-form-element" id="radiusPicklist">
+                                                <apex:selectOptions value="{!radiusSelectOptionList}"/>
+                                            </apex:selectList>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="cityOrZip">City or ZipCode</label>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputText html-placeholder="ZipCode or City" value="{!enteredData}" label="City or ZipCode" id="cityOrZip"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1 slds-align_absolute-center slds-p-top_small">
+                                    <apex:commandButton value="Search" action="{!searchContacts}" rerender="pageMsg,resultsPanel" styleClass="slds-button slds-button_brand"/>
+                                    <apex:commandButton value="Save & Search" action="{!saveSearchedRecords}"  styleClass="slds-button slds-button_brand" rerender="pageMsg,savedResultsPanel,resultsPanel"/>
+                                    <apex:commandButton value="Show Saved Searches" action="{!showSavedRecords}" rerender="pageMsg,resultsPanel,savedResultsPanel,savedPanel" styleClass="slds-button slds-button_brand"/>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Filter Section -->
+                    <!-- Result Section -->
+                    <apex:outputPanel id="resultsPanel" >
+                        <apex:outputPanel rendered="{!ResultsPanel_Flag}">
+                            <div class="slds-section slds-is-open">
+                                <h3 class="slds-section__title slds-theme_shade">
+                                    <span class="slds-truncate slds-p-horizontal_small" title="Filters">Results</span>
+                                 </h3>
+                                <div aria-hidden="false" class="slds-section__content">
+                                    <div class="slds-grid slds-gutters">
+                                        <!-- Result Table on Left Side -->
+                                        <div class="slds-col slds-size_3-of-4 slds-p-around_x-small">
+                                            <apex:dataTable styleClass="slds-table slds-table_bordered slds-table_cell-buffer" value="{!contactResultList}" var="con" title="Results Table" rendered="{!contactResultList.size>0}">
+                                                <apex:column headerValue="Name">
+                                                        <apex:outputLink value="/{!con.Id}" target="_blank">{!con.FirstName} {!con.LastName}</apex:outputLink>
+                                                </apex:column>
+                                                <apex:column headerValue="Phone" value="{!con.Phone}"/>
+                                            </apex:dataTable>
+                                        </div>
+                                        <!-- / Result Table on Left Side -->
+                                        <!-- Detail Section on Right Side -->
+                                        <article class="slds-card slds-p-around_x-small slds-col slds-size_1-of-4 slds-p-around_x-small">
+                                            <div class="slds-card__header slds-grid">
+                                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                    <div class="slds-media__figure">
+                                                        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+                                                            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <h2>
+                                                            <a href="/0037F000004deHwQAI" class="slds-card__header-link slds-truncate" title="[object Object]">
+                                                                <span class="slds-text-heading_small slds-text-title_caps">{!tempContact.FirstName}</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                </header>
+                                            </div>
+                                            <div class="slds-card__body slds-card__body_inner">
+                                                <div class="slds-form slds-form_horizontal">
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label" for="name">Name</label>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField id="name" value="{!tempContact.FirstName}"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label" for="account">Account</label>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField id="account" value="{!tempContact.AccountId}"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label" for="phone">Phone</label>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField id="phone" value="{!tempContact.Phone}"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label" for="email">Email</label>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField id="email" value="{!tempContact.Email}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <footer class="slds-card__footer"></footer>
+                                        </article>
+                                        <!-- / Detail Section on Right Side -->
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <apex:outputPanel id="savedPanel">
+                        <apex:outputPanel rendered="{!showSavedRecords_Flag}">
+                            <div class="slds-section slds-is-open">
+                                <h3 class="slds-section__title slds-theme_shade">
+                                    <span class="slds-truncate slds-p-horizontal_small" title="Filters">SHOW SAVED SEARCHES</span>
+                                </h3>
+                                <div aria-hidden="false" class="slds-section__content">
+                                    <apex:dataTable styleClass="slds-table slds-table_bordered slds-table_cell-buffer" value="{!lstShowSavedRecords}" var="sr" title="Saved Table" rendered="{!showSavedRecords_Flag}">
+                                        <apex:column headerValue="Searches">
+                                            <apex:outputLink value="/{!sr.Id}" target="_blank">{!sr.Name}</apex:outputLink>
+                                        </apex:column>
+                                        <apex:column headerValue="ZipCodeOrCity" value="{!sr.ZipCodeOrCity__c}"/>
+                                        <apex:column headerValue="Under Radius" value="{!sr.Under_Radius__c}"/>
+                                        <apex:column headerValue="Action">
+                                            <apex:commandLink action="{!redirectToSearchFilters}" >
+                                                <apex:param name="searchId" value="{!sr.Id}"/>RUN
+                                            </apex:commandLink>
+                                        </apex:column>
+                                     </apex:dataTable>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <!-- / Result Section -->
+                </apex:form>
+            </div>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="SelectBoxFunctionality" tabStyle="Account" sidebar="false">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+                <apex:commandButton action="{!deleteSelectedRecords}" value="Delete"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!lstContact}" var="cont">
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:inputCheckbox styleClass="chkAll">
+                         <apex:actionSupport event="onclick" action="{!GetSelected}" onsubmit="checkAll(this)" rerender="Selected_PBS"/>
+                    </apex:inputCheckbox>
+                </apex:facet>
+                <apex:inputCheckbox value="{!selected}" id="checkedone" styleClass="chkItem">
+                    <apex:actionSupport event="onclick" action="{!GetSelected}" rerender="Selected_PBS"/>
+                </apex:inputCheckbox>
+            </apex:column>
+            <apex:column headerValue="LastName" value="{!cont.LastName}"/>
+            <apex:column headerValue="Phone" value="{!cont.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+    <script>
+        $( document ).ready(function() {
+            
+        });
+        
+        function checkAll(cb){
+            var chkAll = $('.chkAll');
+            $('.chkItem').attr('checked', chkAll.is(':checked'));
+            // var inputElem = document.getElementsByTagName("input");
+            // for(var i=0; i<inputElem.length; i++){
+            //     if(inputElem[i].id.indexOf("checkedone")!=-1)
+            //     inputElem[i].checked = cb.checked;
+            //     }
+        };   
+
+    </script>
+</apex:page>

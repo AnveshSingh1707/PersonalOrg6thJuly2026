@@ -1,0 +1,147 @@
+<apex:page sidebar="true" showHeader="true" standardController="Account" extensions="JqueryTutorialVFController">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <apex:stylesheet value="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+            <style>
+                a:active {
+                    color: blue;
+                }
+                a:visited {
+                    color:purple;
+                }
+                thead, tfoot{
+                   white-space: normal !important;
+                   background: #8f002a !important;
+                   color: #fff !important;
+                   padding: 10px !important;
+                }    
+            </style>
+        </head>
+        <body>
+            <apex:form id="form1">
+                <apex:slds />
+                <!-- page message -->
+                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                    <div class="slds-col slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                        <div id="dvMessageValidateToken" class="slds-m-around_small">
+                            <apex:pageMessages escape="false" id="pgMsg"/>
+                        </div>
+                    </div>
+                </div>
+            <!-- page message -->
+            <!-- For SLDS Spinner : Start -->
+                <apex:actionStatus id="status">
+                    <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+            <!-- For SLDS Spinner : End -->
+            <div class="slds-page-header ">
+                <div class="slds-media__body slds-align_absolute-center">
+                    <h1 class="slds-page-header__title slds-truncate slds-align-middle hideHeader" title="How would you like to create new contact?" id="headerId">
+                        How would you like to create new Contact?
+                    </h1>
+                    <h1 class="slds-page-header__title slds-truncate slds-align-middle showHeader" title="How would you like to create new contact?" id="showHeaderId">
+                        Wanna Return Back?
+                    </h1>
+                </div>
+            </div>
+            <div class="slds-box dropDown">
+                <div class="slds-clearfix">
+                    <div class="slds-align_absolute-center">
+                        <a href="/servlet/servlet.FileDownload?file=00P7F000005R4xr" target="_blank">Download Image</a> 
+                    </div>
+                </div>
+            </div>
+            <div class="slds-media__body  slds-m-vertical_small slds-align_absolute-center">
+                <button class="slds-button slds-button_brand btnClick ">Click to Hide</button>
+                <button class="slds-button slds-button_destructive clickToReturnBack ">Click to Return Back</button>
+                <button class="slds-button slds-button_neutral btnDownloader slds-float_right" >Download Files </button>
+                <button class="slds-button slds-button_neutral takeItBack slds-float_right" >Don't Want To Download</button>
+            </div>
+            <!--<div class="slds-clearfix">-->
+                <div  class="slds-box">
+                    <table id="JqueryDataTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!lstALLAccounts}" var="acc">
+                                <tr>
+                                    <td><apex:outputText value="{!acc.Name}"/></td>
+                                    <td><apex:outputText value=" £ {!acc.Email__c}"/></td>
+                                    <td><apex:outputText value="£ {!acc.phone+' K'}"/></td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            <!--</div>-->
+            </apex:form>
+            <script>
+            $(document).ready(function() {
+                $('#JqueryDataTable').DataTable( {
+                    "order": [[ 0, "desc" ]]
+                } );
+                $('.dataTables_filter').addClass('slds-m-bottom_medium');
+            } );
+                $(document).ready(
+                    function(){
+                        $(".dropDown").hide();
+                        $(".takeItBack").hide();
+                        $(".showHeader").hide();
+                        $(".clickToReturnBack").hide();
+                        $(".btnClick").click(
+                            function(){
+                              $(".hideHeader").hide();
+                              $(".btnClick").hide();
+                              $(".showHeader").show();
+                              $(".clickToReturnBack").show();
+                              return false;
+                            });
+                        $(".clickToReturnBack").click(function(){
+                            $(".hideHeader").show();
+                               $(".btnClick").show();
+                               $(".showHeader").hide();
+                               $(".clickToReturnBack").hide();
+                               return false;
+                        });
+                        $(".btnDownloader").click(function(){
+                           $(".dropDown").slideDown(1000);
+                           $(".btnDownloader").hide();
+                           $(".takeItBack").show();
+                           
+                           return false;
+                        });
+                        $(".takeItBack").click(function(){
+                            $(".dropDown").hide("slow");
+                            $(".takeItBack").hide();
+                            $(".btnDownloader").show();
+                            $(".btnClick").attr('disabled', 'disabled');
+                            return false;
+                        });
+                    });
+                    
+            </script>
+        </body>
+    </html>
+</apex:page>

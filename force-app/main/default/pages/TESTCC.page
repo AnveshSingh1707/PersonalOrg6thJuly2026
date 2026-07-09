@@ -1,0 +1,171 @@
+<apex:page docType="html-5.0" renderAs="pdf">
+        <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <meta charset="utf-8"/>
+            <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<head>
+<style type="text/css">
+
+span.cls_002{font-family:Arial,serif;font-size:7.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:7.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:8.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:8.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:8.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:8.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:"MingLiU",serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:"MingLiU",serif;font-size:9.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:9.6px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:9.6px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:7.1px;color:rgb(255,255,255);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:7.1px;color:rgb(255,255,255);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Arial,serif;font-size:8.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Arial,serif;font-size:8.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:"Wide Latin",serif;font-size:46.6px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:"Wide Latin",serif;font-size:46.6px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_012{font-family:Arial,serif;font-size:6.2px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_012{font-family:Arial,serif;font-size:6.2px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_015{font-family:Arial,serif;font-size:6.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: underline}
+div.cls_015{font-family:Arial,serif;font-size:6.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_014{font-family:Arial,serif;font-size:7.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_014{font-family:Arial,serif;font-size:7.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+</style>
+<script type="text/javascript" src="ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_id_ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:876px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+        <apex:image url="{!URLFOR($Resource.ROHITCOVID, '/ROHITCOVID/background1.jpg')}" /> 
+<!--<img src="ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_id_ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_files/background1.jpg" width="595" height="876"/>-->
+</div>
+<div style="position:absolute;left:36.00px;top:67.44px" class="cls_002"><span class="cls_002">L27 - MISS ARCHANA SINGH(VINAYAK</span></div>
+<div style="position:absolute;left:36.00px;top:78.52px" class="cls_002"><span class="cls_002">PATHOLOGY LAB)</span></div>
+<div style="position:absolute;left:38.61px;top:137.43px" class="cls_004"><span class="cls_004">Name</span></div>
+<div style="position:absolute;left:92.10px;top:137.08px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:105.79px;top:138.12px" class="cls_004"><span class="cls_004">Mr. ROHIT KHADTARE</span></div>
+<div style="position:absolute;left:371.54px;top:137.43px" class="cls_004"><span class="cls_004">Collected</span></div>
+<div style="position:absolute;left:442.36px;top:137.23px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:136.93px" class="cls_004"><span class="cls_004">19/01/2021</span></div>
+<div style="position:absolute;left:498.69px;top:136.93px" class="cls_004"><span class="cls_004">1:28:00PM</span></div>
+<div style="position:absolute;left:371.54px;top:149.25px" class="cls_004"><span class="cls_004">Received</span></div>
+<div style="position:absolute;left:442.36px;top:149.05px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:148.75px" class="cls_004"><span class="cls_004">19/01/2021</span></div>
+<div style="position:absolute;left:498.69px;top:148.75px" class="cls_004"><span class="cls_004">1:58:56PM</span></div>
+<div style="position:absolute;left:38.61px;top:157.72px" class="cls_004"><span class="cls_004">Lab No.</span></div>
+<div style="position:absolute;left:92.10px;top:157.37px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:105.59px;top:157.22px" class="cls_004"><span class="cls_004">287163905</span></div>
+<div style="position:absolute;left:167.94px;top:157.72px" class="cls_004"><span class="cls_004">Age:</span></div>
+<div style="position:absolute;left:193.45px;top:157.72px" class="cls_004"><span class="cls_004">27 Years</span></div>
+<div style="position:absolute;left:260.34px;top:157.72px" class="cls_004"><span class="cls_004">Gender:</span></div>
+<div style="position:absolute;left:312.44px;top:157.22px" class="cls_004"><span class="cls_004">Male</span></div>
+<div style="position:absolute;left:371.54px;top:161.07px" class="cls_004"><span class="cls_004">Reported</span></div>
+<div style="position:absolute;left:442.36px;top:160.87px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:160.57px" class="cls_004"><span class="cls_004">20/01/2021  10:24:58AM</span></div>
+<div style="position:absolute;left:38.61px;top:177.47px" class="cls_004"><span class="cls_004">A/c Status</span></div>
+<div style="position:absolute;left:92.10px;top:177.12px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:104.51px;top:177.47px" class="cls_004"><span class="cls_004">P</span></div>
+<div style="position:absolute;left:167.94px;top:177.47px" class="cls_004"><span class="cls_004">Ref By :</span></div>
+<div style="position:absolute;left:211.97px;top:176.97px" class="cls_004"><span class="cls_004">SELF</span></div>
+<div style="position:absolute;left:371.54px;top:177.47px" class="cls_004"><span class="cls_004">Report Status</span></div>
+<div style="position:absolute;left:442.36px;top:176.97px" class="cls_006"><span class="cls_006">:</span><span class="cls_004"> Final</span></div>
+<div style="position:absolute;left:40.19px;top:200.12px" class="cls_004"><span class="cls_004">SRF ID : 274830023528581</span></div>
+<div style="position:absolute;left:36.79px;top:224.15px" class="cls_004"><span class="cls_004">Test Name</span></div>
+<div style="position:absolute;left:278.26px;top:223.71px" class="cls_004"><span class="cls_004">Results</span></div>
+<div style="position:absolute;left:38.32px;top:244.00px" class="cls_004"><span class="cls_004">SARS-CoV-2 (COVID-19) QUALITATIVE  REAL TIME  RT-PCR</span><span class="cls_007">  *</span></div>
+<div style="position:absolute;left:38.32px;top:279.07px" class="cls_006"><span class="cls_006">Type of Specimen</span></div>
+<div style="position:absolute;left:278.26px;top:279.07px" class="cls_006"><span class="cls_006">Nasopharyngeal /</span></div>
+<div style="position:absolute;left:278.26px;top:290.89px" class="cls_006"><span class="cls_006">Oropharyngeal Swabs</span></div>
+<div style="position:absolute;left:38.32px;top:306.99px" class="cls_006"><span class="cls_006">Result</span></div>
+<div style="position:absolute;left:278.26px;top:306.21px" class="cls_006"><span class="cls_006">Negative</span></div>
+<div style="position:absolute;left:35.26px;top:338.02px" class="cls_008"><span class="cls_008">Note</span></div>
+<div style="position:absolute;left:52.99px;top:353.09px" class="cls_005"><span class="cls_005">1.  ICMR Registration number for Covid -19 is DLPDMM.</span></div>
+<div style="position:absolute;left:52.99px;top:367.52px" class="cls_005"><span class="cls_005">2.  Negative result does not rule out the possibility of Covid -19 infection. Presence of inhibitors, mutations</span></div>
+<div style="position:absolute;left:70.72px;top:381.95px" class="cls_005"><span class="cls_005">&amp;  insufficient  RNA  specific  to  SARS-CoV-2  can  influence  the  test  result.  Kindly  correlate  the  results</span></div>
+<div style="position:absolute;left:70.72px;top:396.38px" class="cls_005"><span class="cls_005">with  clinical  findings.  A  negative  result  in  a  single  upper  respiratory  tract  sample  does  not  rule  out</span></div>
+<div style="position:absolute;left:70.72px;top:410.81px" class="cls_005"><span class="cls_005">SARS-CoV-2  infection.  Hence  in  such  cases  a  repeat  sample  should  be  sent.  Lower  respiratory  tract</span></div>
+<div style="position:absolute;left:70.72px;top:425.24px" class="cls_005"><span class="cls_005">samples  like  Sputum,  BAL,  ET  aspirate  are  appropriate  samples  especially  in  severe  and  progressive</span></div>
+<div style="position:absolute;left:70.72px;top:439.67px" class="cls_005"><span class="cls_005">lung disease.</span></div>
+<div style="position:absolute;left:52.99px;top:454.10px" class="cls_005"><span class="cls_005">3.  Covid-19 Test conducted as per kits approved by ICMR / CE-IVD / USFDA.</span></div>
+<div style="position:absolute;left:52.99px;top:468.53px" class="cls_005"><span class="cls_005">4.  Kindly consult referring Physician / Authorized hospitals for appropriate follow up.</span></div>
+<div style="position:absolute;left:52.99px;top:482.96px" class="cls_005"><span class="cls_005">5.   This is a qualitative test. The Ct values do not provide a measure of viral load due to inherent</span></div>
+<div style="position:absolute;left:70.72px;top:497.39px" class="cls_005"><span class="cls_005">variability in sampling and kits. According to ICMR guidelines Ct values should not be used to gauge</span></div>
+<div style="position:absolute;left:70.72px;top:511.82px" class="cls_005"><span class="cls_005">the severity of the disease.</span></div>
+<div style="position:absolute;left:70.72px;top:526.25px" class="cls_005"><span class="cls_005"> </span><A HREF="https://www.icmr.gov.in/pdf/covid/techdoc/advisory_on_correlation_of_covid_severity_with_ct_valu/">https://www.icmr.gov.in/pdf/covid/techdoc/Advisory_on_correlation_of_COVID_severity_with_Ct_valu</A> </div>
+<div style="position:absolute;left:70.72px;top:540.68px" class="cls_005"><span class="cls_005">es.pdf)</span></div>
+<div style="position:absolute;left:35.26px;top:570.58px" class="cls_008"><span class="cls_008">Comments</span></div>
+<div style="position:absolute;left:35.26px;top:585.65px" class="cls_005"><span class="cls_005">Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more</span></div>
+<div style="position:absolute;left:35.26px;top:598.21px" class="cls_005"><span class="cls_005">severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory</span></div>
+<div style="position:absolute;left:35.26px;top:610.77px" class="cls_005"><span class="cls_005">Syndrome (SARS-CoV). Coronavirus disease (COVID-19) is a new strain that was discovered in 2019 and</span></div>
+<div style="position:absolute;left:35.26px;top:623.33px" class="cls_005"><span class="cls_005">has not been previously identified in humans. Common signs of infection include respiratory symptoms,</span></div>
+<div style="position:absolute;left:35.26px;top:635.88px" class="cls_005"><span class="cls_005">fever, cough, shortness of breath and breathing difficulties. In more severe cases, infection can cause</span></div>
+<div style="position:absolute;left:35.26px;top:648.44px" class="cls_005"><span class="cls_005">pneumonia, severe acute respiratory syndrome and kidney failure.</span></div>
+<div style="position:absolute;left:16.94px;top:731.33px" class="cls_009"><span class="cls_009">PatientReportSCSuperPanel.SP_GENERAL_TEMPLATE01_SC (Version: 7)</span></div>
+<div style="position:absolute;left:41.76px;top:748.27px" class="cls_006"><span class="cls_006">* Not in NABL scope</span></div>
+<div style="position:absolute;left:492.50px;top:780.34px" class="cls_011"><span class="cls_011">Page 1 of 2</span></div>
+<div style="position:absolute;left:237.48px;top:767.28px" class="cls_010"><span class="cls_010">*287163905*</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:886px;width:595px;height:876px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<apex:image url="{!URLFOR($Resource.ROHITCOVID, '/ROHITCOVID/background2.jpg')}" />
+<!--<img src="ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_id_ece4c4e8-5be2-11eb-8b25-0cc47a792c0a_files/background2.jpg" width="595" height="876"/>-->
+</div>
+<div style="position:absolute;left:36.00px;top:67.44px" class="cls_002"><span class="cls_002">L27 - MISS ARCHANA SINGH(VINAYAK</span></div>
+<div style="position:absolute;left:36.00px;top:78.52px" class="cls_002"><span class="cls_002">PATHOLOGY LAB)</span></div>
+<div style="position:absolute;left:38.61px;top:137.43px" class="cls_004"><span class="cls_004">Name</span></div>
+<div style="position:absolute;left:92.10px;top:137.08px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:105.79px;top:138.12px" class="cls_004"><span class="cls_004">Mr. ROHIT  KHADTARE</span></div>
+<div style="position:absolute;left:371.54px;top:137.43px" class="cls_004"><span class="cls_004">Collected</span></div>
+<div style="position:absolute;left:442.36px;top:137.23px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:136.93px" class="cls_004"><span class="cls_004">19/01/2021</span></div>
+<div style="position:absolute;left:498.69px;top:136.93px" class="cls_004"><span class="cls_004">1:28:00PM</span></div>
+<div style="position:absolute;left:371.54px;top:149.25px" class="cls_004"><span class="cls_004">Received</span></div>
+<div style="position:absolute;left:442.36px;top:149.05px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:148.75px" class="cls_004"><span class="cls_004">19/01/2021</span></div>
+<div style="position:absolute;left:498.69px;top:148.75px" class="cls_004"><span class="cls_004">1:58:56PM</span></div>
+<div style="position:absolute;left:38.61px;top:157.72px" class="cls_004"><span class="cls_004">Lab No.</span></div>
+<div style="position:absolute;left:92.10px;top:157.37px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:105.59px;top:157.22px" class="cls_004"><span class="cls_004">287163905</span></div>
+<div style="position:absolute;left:167.94px;top:157.72px" class="cls_004"><span class="cls_004">Age:</span></div>
+<div style="position:absolute;left:193.45px;top:157.72px" class="cls_004"><span class="cls_004">27 Years</span></div>
+<div style="position:absolute;left:260.34px;top:157.72px" class="cls_004"><span class="cls_004">Gender:</span></div>
+<div style="position:absolute;left:312.44px;top:157.22px" class="cls_004"><span class="cls_004">Male</span></div>
+<div style="position:absolute;left:371.54px;top:161.07px" class="cls_004"><span class="cls_004">Reported</span></div>
+<div style="position:absolute;left:442.36px;top:160.87px" class="cls_006"><span class="cls_006">:</span></div>
+<div style="position:absolute;left:448.37px;top:160.57px" class="cls_004"><span class="cls_004">20/01/2021  10:24:58AM</span></div>
+<div style="position:absolute;left:38.61px;top:177.47px" class="cls_004"><span class="cls_004">A/c Status</span></div>
+<div style="position:absolute;left:92.10px;top:177.12px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:104.51px;top:177.47px" class="cls_004"><span class="cls_004">P</span></div>
+<div style="position:absolute;left:167.94px;top:177.47px" class="cls_004"><span class="cls_004">Ref By :</span></div>
+<div style="position:absolute;left:211.97px;top:176.97px" class="cls_004"><span class="cls_004">SELF</span></div>
+<div style="position:absolute;left:371.54px;top:177.47px" class="cls_004"><span class="cls_004">Report Status</span></div>
+<div style="position:absolute;left:442.36px;top:176.97px" class="cls_006"><span class="cls_006">:</span><span class="cls_004"> Final</span></div>
+<div style="position:absolute;left:45.41px;top:247.06px" class="cls_012"><span class="cls_012">Dr.Neha Herlekar</span></div>
+<div style="position:absolute;left:45.41px;top:255.92px" class="cls_012"><span class="cls_012">MD, DNB Microbiology</span></div>
+<div style="position:absolute;left:45.41px;top:264.79px" class="cls_012"><span class="cls_012">Consultant Microbiologist</span></div>
+<div style="position:absolute;left:45.41px;top:273.65px" class="cls_012"><span class="cls_012">Dr Lal PathLabs Ltd</span></div>
+<div style="position:absolute;left:159.52px;top:291.68px" class="cls_006"><span class="cls_006">-------------------------------End of report --------------------------------</span></div>
+<div style="position:absolute;left:257.33px;top:327.68px" class="cls_015"><span class="cls_015">IMPORTANT INSTRUCTIONS</span></div>
+<div style="position:absolute;left:41.32px;top:349.05px" class="cls_004"><span class="cls_004">*</span><span class="cls_014">Test  results  released  pertain  to  the  specimen  submitted .</span><span class="cls_004">*</span><span class="cls_014">All  test  results  are  dependent  on  the  quality  of  the  sample  received  by  the  Laboratory .</span></div>
+<div style="position:absolute;left:41.32px;top:361.41px" class="cls_004"><span class="cls_004">*</span><span class="cls_014">Laboratory  investigations  are  only  a  tool  to  facilitate  in  arriving  at  a  diagnosis  and  should  be  clinically  correlated  by  the  Referring  Physician .</span><span class="cls_004">*</span><span class="cls_014">Sample</span></div>
+<div style="position:absolute;left:41.32px;top:375.35px" class="cls_014"><span class="cls_014">repeats   are   accepted   on   request   of   Referring   Physician   within</span></div>
+<div style="position:absolute;left:286.68px;top:373.78px" class="cls_014"><span class="cls_014">7 days   post   reporting.</span><span class="cls_004">*</span><span class="cls_014">Report   delivery   may   be   delayed   due   to   unforeseen</span></div>
+<div style="position:absolute;left:41.32px;top:385.94px" class="cls_014"><span class="cls_014">circumstances.   Inconvenience   is   regretted.</span><span class="cls_006">*</span><span class="cls_014">Certain   tests   may   require   further   testing   at   additional   cost   for   derivation   of   exact   value.   Kindly   submit</span></div>
+<div style="position:absolute;left:41.32px;top:400.08px" class="cls_014"><span class="cls_014">request   within</span></div>
+<div style="position:absolute;left:100.08px;top:398.50px" class="cls_014"><span class="cls_014">72 hours   post   reporting.</span><span class="cls_004">*</span><span class="cls_014">Test   results   may   show   interlaboratory   variations .</span><span class="cls_004">*</span><span class="cls_014">The   Courts/Forum   at   Delhi   shall   have   exclusive</span></div>
+<div style="position:absolute;left:41.32px;top:410.86px" class="cls_014"><span class="cls_014">jurisdiction   in   all   disputes/claims   concerning   the   test(s)   &amp;   or   results   of   test(s).</span><span class="cls_004">*</span><span class="cls_014">Test   results   are   not   valid   for   medico   legal   purposes.</span></div>
+<div style="position:absolute;left:539.18px;top:412.44px" class="cls_014"><span class="cls_014">* Contact</span></div>
+<div style="position:absolute;left:41.32px;top:423.32px" class="cls_014"><span class="cls_014">customer care  Tel No. +91-11-39885050 for all queries related to test results.</span></div>
+<div style="position:absolute;left:41.32px;top:434.16px" class="cls_014"><span class="cls_014">(#) Sample drawn from outside source.</span></div>
+<div style="position:absolute;left:16.94px;top:731.33px" class="cls_009"><span class="cls_009">PatientReportSCSuperPanel.SP_GENERAL_TEMPLATE01_SC (Version: 7)</span></div>
+<div style="position:absolute;left:41.76px;top:748.27px" class="cls_006"><span class="cls_006">* Not in NABL scope</span></div>
+<div style="position:absolute;left:492.50px;top:780.34px" class="cls_011"><span class="cls_011">Page 2 of 2</span></div>
+<div style="position:absolute;left:237.48px;top:767.28px" class="cls_010"><span class="cls_010">*287163905*</span></div>
+</div>
+
+</body>
+</html>
+
+</apex:page>

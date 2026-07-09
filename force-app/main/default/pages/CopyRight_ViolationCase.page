@@ -1,0 +1,712 @@
+<apex:page sidebar="false" showHeader="false" docType="html-5.0" renderAs="pdf">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          lang="en">
+        <head>
+        </head>
+        <style>
+            /*body{*/
+            /*  font-family:'font-family: Helvetica, Arial, Sans-Serif;';*/
+            /*  font-size:1em;*/
+            /*}*/
+        </style>
+        <body style="font-family:  Sans-Serif; font-size: 15px; page-break-after: auto;">
+            <div style="font-size: 10px;">
+            <div>
+                <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+            <div>
+                <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"/>
+            </div>
+            <p><br/><br/>
+                {$IF_SALUTATION} {$IF_FIRST_NAME} {$IF_LAST_NAME}
+            </p>
+            <p>
+                {Opportunity.InfringerCompany}<br/>
+            
+                {Opportunity.InfringerStreet}<br/>
+            
+                {Opportunity.InfringerCity}<br/>
+            
+                {Opportunity.InfringerZipcode}<br/>
+            
+                {Opportunity.InfringerEmail}<br/>
+            </p>
+            <p align="right">
+                {$TODAYDATE}
+            </p>
+            <p>
+                <strong>
+                    <em>
+                        <u>Via Electronic Mail without prejudice
+                        </u>
+                    </em>
+                </strong>
+            </p>
+            <p align="center">
+                <strong>
+                    <u>
+                    </u>
+                </strong>
+            </p>
+            <p align="center">
+                <strong>
+                    <u>Case Number: {Opportunity.LAPIXA_CASE_ID}
+                    </u>
+                </strong>
+            </p>
+            <p>
+                <strong>
+                </strong>
+            </p>
+            <p>
+                Dear {$IF_SALUTATION} {$IF_LAST_NAME},
+            </p>
+            <p>
+                We are writing with regards to an unauthorized use of our client’s work on your website.
+            </p>
+            <p>
+                LAPIXA is a copyright compliance agent which represents visual artists globally in
+                matters of copyright infringement. Our image scanning software detected
+                that {$PHFIRST_NAME} {$PHLAST_NAME}’s work is being used on the {$InfringerCompany}’s
+                website at the following URL/s:
+            </p>
+            <p>
+                {Opportunity.INFRINGEMENT_URL}
+            </p>
+            <p>
+                {$PH_MRMS} {$PHLAST_NAME} identified your use as an infringement of {$PH_HISHER}
+                copyright and submitted this case to LAPIXA to contact you with regards
+                to the unauthorized continued use of {$PH_HISHER} work.
+            </p>
+            <p>
+                Under the U.S. Copyright Act, 17 U.S.C. §101, et al. copyright holders are entitled
+                to recover actual damages and any profits attributable to infringements,
+                and should they hold Copyright Registration, before final judgement is
+                rendered, are entitled to elect to recover an award of statutory damages
+                of up to $30,000 per infringement.
+            </p>
+            <p>
+                Please see a copy of the original photo and a screenshot of use attached to this
+                letter.
+            </p>
+            <p>
+                If you hold a valid license to this image, please provide this as soon as possible
+                so we can update our records accordingly and withdraw our complaint.
+            </p>
+            <p>
+                In the interest of avoiding litigation, we would like to offer you a retroactive
+                license to cover the use which has already occurred on your website,
+                subject to compliance with the following conditions by
+                <strong>{Opportunity.CLOSE_DATE}.
+                </strong>
+            </p>
+            <p>
+                1. Immediate and permanent removal of all unauthorized uses of our client’s work
+                from your website/s, including any and all social media sites, accounts,
+                products &amp; marketing materials.
+            </p>
+            <p>
+                2. Payment in full for the retroactive license fee of
+                <strong>{Opportunity.CLAIM_AMOUNT} 
+                </strong>for the copyrighted works (Exhibit A) used without authorization
+                as shown in the screenshot (Exhibit B).
+            </p>
+            <p>
+                Please note that removal of the image alone does not rectify the matter. Our client
+                deserves fair compensation at the very least, for the use which has already
+                occurred.
+            </p>
+            <p>
+                We have calculated the above retroactive license using FotoQuote: The industry standard
+                photo pricing guide. This is determined by taking into account elements
+                such as; image size, duration, market size and type of usage. The price
+                also includes an $85 administration fee. Payment instructions are found
+                on the invoice attached to this letter. If you would like to continue
+                to use the photograph/s, we would be happy to recalculate a license fee
+                accordingly.
+            </p>
+            <p>
+                LAPIXA operates within 12 different countries around the world alongside our network
+                of lawyers. Failure to comply with the above conditions will result in
+                the matter being appointed to our US attorney at which point this offer
+                will no longer stand.
+            </p>
+            <p>
+                If you have any questions, please email
+                <a href="mailto:copyrightprotection@lapixa.com">
+                    copyrightprotection@lapixa.com
+                </a> or call 617-858-8400.
+            </p>
+            <p>
+                Kind Regards,
+            </p>
+            <p>
+                LAPIXA US Copyright Compliance Officer.
+                <br/>
+                <img width="78" height="30" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJO&oid=00D7F000000xS21&lastMod=1528365592000"
+                     align="left" hspace="9" />
+                <br/>
+                <br/>
+            </p>
+            <p>
+                Serge Licht, CEO
+            </p>
+            
+            <div Style="margin-Top:60px;
+                        bottom: 30px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%; position:fixed;bottom: 0px;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aor2&oid=00D7F000000xS21&lastMod=1528445622000"/>
+                </div>
+                </div>
+                
+            <div id="originalPhoto" style="page-break-after: always; margin-Top: 115px;">
+              <div>
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"
+                         />
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div>
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"
+                         />
+                </div> 
+                <div>
+                    Original Photo
+                </div>
+                <div Style="margin-Top:60px;
+                        bottom: 30px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%; position:fixed;bottom: 0px;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aor2&oid=00D7F000000xS21&lastMod=1528445622000"/>
+                </div>
+            </div>
+            <div id="screenshot" style="page-break-after: always;">
+               <div>
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"
+                         />
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div>
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"
+                         />
+                </div> 
+                <div>
+                    screenshot
+                </div>
+                <div Style="margin-Top:60px;
+                        bottom: 30px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%; position:fixed;bottom: 0px;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aor2&oid=00D7F000000xS21&lastMod=1528445622000"/>
+                </div> 
+            </div>
+            <div style="page-break-after: always;">
+                <div >
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"
+                         />
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div>
+                    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"
+                         />
+                </div>
+                <table border="0" cellspacing="0" cellpadding="0" align="left" width="700" style="font-size: 9px;">
+                    <tbody>
+                        <tr>
+                            <td width="118" valign="top">
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                            <td width="202" colspan="3" rowspan="5" valign="top">
+                                <p align="right">
+                                    <strong>LAPIXA
+                                    </strong>
+                                </p>
+                                <p align="right">
+                                    25 Chardon Street
+                                </p>
+                                <p align="right">
+                                    Boston, MA 02114
+                                </p>
+                                <p align="right">
+                                    <a href="mailto:copyrightprotection@lapixa.com">
+                                        copyrightprotection@lapixa.com
+                                    </a>
+                                </p>
+                                <p align="right">
+                                    +1 617 858 8400
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                                <p>
+                                    {$IF_SALUTATION} {$IF_FIRST_NAME} {$IF_LAST_NAME}
+                                </p>
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                            <td width="35" valign="top">
+                                <p>
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="168" colspan="2" valign="top">
+                                <p align="right">
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                                <p>
+                                    {Opportunity.InfringerCompany}
+                                </p>
+                            </td>
+                            <td width="167" valign="top">
+                            </td>
+                            <td width="35" valign="top">
+                            </td>
+                            <td width="168" colspan="2" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118" valign="top">
+                                <p>
+                                    {Opportunity.InfringerStreet}<br/>
+                                
+                                    {Opportunity.InfringerCity}<br/>
+                                
+                                    {Opportunity.InfringerZipcode}<br/>
+                                </p>
+                            </td>
+                            <td width="202" colspan="2" valign="top">
+                                <p align="right">
+                                    Case No.
+                                </p>
+                                <p align="right">
+                                    Date:
+                                </p>
+                                <p align="right">
+                                    Due Date:
+                                </p>
+                            </td>
+                            <td width="168" colspan="2" valign="top">
+                                <p>
+                                    <strong>
+                                        <u>{Opportunity.LAPIXA_CASE_ID}
+                                        </u>
+                                    </strong>
+                                </p>
+                                <p>
+                                    {Opportunity.TODAYDATE}
+                                </p>
+                                <p>
+                                    {Opportunity.CLOSE_DATE}
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="118">
+                                <p>
+                                    <strong>Case Number:
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="167">
+                                <p>
+                                    <strong>{Opportunity.LAPIXA_CASE_ID}
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="35" valign="top">
+                            </td>
+                            <td width="168" colspan="2" valign="top">
+                            </td>
+                        </tr>
+                        <tr style="background-color: #26a89c ">
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    <strong>Item
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p align="right">
+                                    <strong>Amount in USD
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    Retroactive license for up to {Opportunity.DURATIONOFINFRINGEMENT} {Opportunity.TYPE_OF_USE} use of {Opportunity.IMAGE_SIZE}
+                                    size photograph by {$PHFIRST_NAME} {$PHLAST_NAME}
+                                    on the following URL/s: {Opportunity.INFRINGEMENT_URL}
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p align="right">
+                                    {Opportunity.FOTOQUOTE_EST}
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    Administration Fee
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p align="right">
+                                    $85.00
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    <em>Continued use not included
+                                    </em>
+                                </p>
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p style="margin-Top: 10px">
+                                    Tax
+                                </p>
+                            </td>
+                            <td width="166">
+                                <p align="right" style="margin-Top: 10px">
+                                    $0.00
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr style=" background-color: #26a89c; margin-Top: 10px; ">
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    <strong>Total
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p align="right">
+                                    <strong>{Opportunity.CLAIM_AMOUNT}
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p align="right">
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td width="320" colspan="3" valign="top">
+                                <p>
+                                    <strong>Fedwires &amp; ACH Payments:
+                                    </strong>
+                                </p>
+                                <p>
+                                    Beneficiary: Lapixa GmbH
+                                </p>
+                                <p>
+                                    Account No.: 2356284501
+                                </p>
+                                <p>
+                                    UniCredit Bank AG (HypoVereinsbank)
+                                </p>
+                                <p>
+                                    150 East 42nd Street
+                                </p>
+                                <p>
+                                    New York, NY 10017
+                                </p>
+                                <p>
+                                    ABA Routing #: 0260-0880-8 (Fedwire &amp; ACH)
+                                </p>
+                                <p>
+                                    Swift Code: HYVEUS33XXX (International Payments)
+                                </p>
+                            </td>
+                            <td width="166" valign="top">
+                                <p>
+                                    <strong>PayPal:
+                                    </strong>
+                                    <a href="mailto:accounting@lapixa.de">
+                                        accounting@lapixa.de
+                                    </a>
+                                    <u>
+                                    </u>
+                                </p>
+                                <p>
+                                    <u>
+                                    </u>
+                                </p>
+                                <p>
+                                    <u>
+                                    </u>
+                                </p>
+                                <p>
+                                    <strong>Check
+                                    </strong>
+                                </p>
+                                <p>
+                                    Attn. Checks Processing Center
+                                </p>
+                                <p>
+                                    UniCredit Bank AG
+                                </p>
+                                <p>
+                                    150 East 42nd Street
+                                </p>
+                                <p>
+                                    New York, NY 10017
+                                </p>
+                                <p>
+                                    Attn. Checks Processing Center
+                                </p>
+                                <p>
+                                    <strong>
+                                    </strong>
+                                </p>
+                            </td>
+                            <td width="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="485" colspan="4" valign="top">
+                                <p>
+                                    <em>Please quote your case number as a reference.
+                                    </em>
+                                </p>
+                                <p>
+                                    <em>
+                                        Please contact us if you would like to purchase a
+                                        license for continued use.
+                                    </em>
+                                    <!--    <div Style="margin-Top:75px;-->
+                                    <!--bottom: 30px;-->
+                                    <!--height: 15%;-->
+                                    <!--width: 100%;-->
+                                    <!--float-left;">-->
+                                    <!-- <img  style="width: 100% ; " src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aor2&oid=00D7F000000xS21&lastMod=1528445622000"/>-->
+                                    <!-- </div>-->
+                             </p>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="clear:both;" >
+    <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"
+         />
+    <br/>
+    <br/>
+    <br/>
+    <div>
+        <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"
+             />
+    </div>
+    <div style="clear:both;">
+    </div>
+    <div style=" font-size: 11px;">
+        <p>
+            <strong>FAQs
+            </strong>
+        </p>
+        <p>
+            <strong>
+                We have a license to use this image, why are you contacting me?
+            </strong>
+        </p>
+        <p>
+            Great! If you hold a valid license, please get in touch as soon as possible with
+            a copy so we can update our records accordingly. We do apologize
+            for any confusion and inconvenience if you hold a license for
+            this use.
+        </p>
+        <p>
+            <strong>I've removed the image, why do I still have to pay? 
+            </strong>
+        </p>
+        <p>
+            We appreciate your efforts to remedy the infringement, however, our client did not
+            receive any payment for the use which already occurred. We hope
+            you can appreciate the philosophy that photographers and other
+            visual artists deserve to earn a living wage and fair compensation
+            for use of their work.
+        </p>
+        <p>
+            <strong>
+            </strong>
+        </p>
+        <p>
+            <strong>What is a retroactive license?
+            </strong>
+        </p>
+        <p>
+            A retroactive license simply gives you permission to use the image in the past.
+        </p>
+        <p>
+            If you would like to license the image for future use, please let us know so we can
+            recalculate a price for you.
+        </p>
+        <p>
+            <strong>
+                There was no watermark on the image, how do I know it's copyrighted?
+            </strong>
+        </p>
+        <p>
+            Copyright subsists upon the moment of a works creation (eg. when the shutter closes
+            on the camera) and lasts the author's life plus seventy years.
+            It is not reliant on a watermark or any other copyright management
+            information. Not knowing who the copyright holder is to an image,
+            does not give you the right to use it without the creator's permission.
+        </p>
+        <p>
+            <strong>
+                Our web designer/contractor uploaded this photo, why are we
+                responsible?
+            </strong>
+        </p>
+        <p>
+            It is your responsibility to ensure that web designers, other contractors, and employees
+            understand and abide by copyright law. As the one ultimately
+            benefitting from the use of the work, you are the one responsible
+            for paying the license fees. We encourage you to reach out to
+            your web designer or other contractor and work out a solution
+            separately. Some forms of business insurance may be able to cover
+            this.
+        </p>
+        <p>
+            <strong>I found this image on Google, doesn't that make it free?
+            </strong>
+        </p>
+        <p>
+            Images found on search engines are still subject to copyright. Search engines and
+            the like, are not free image websites and permission must always
+            be sought from the copyright holder. This is why Google displays
+            clearly in their image search “Images may be subject to copyright”
+        </p>
+        <p>
+            <strong>Can I contact the artist directly?
+            </strong>
+        </p>
+        <p>
+            LAPIXA has been engaged exclusively to pursue this case of copyright infringement.
+            All communications regarding this matter must be directed to
+            LAPIXA or its appointed attorney.
+        </p>
+        <p>
+            <strong>I provided credit to the artist, isn't that enough? 
+            </strong>
+        </p>
+        <p>
+            While it's great to credit the work's creator, permission still needs to be sought
+            before using an image.
+        </p>
+        <p>
+            For many of our clients, this is how they make a living and attribution alone is
+            not sufficient.
+        </p>
+        <p>
+            <strong>
+                This image is under a creative commons license, why do I have to pay to
+                use it?
+            </strong>
+        </p>
+        <p>
+            The creative commons license is only valid if the terms are adhered to. If you have
+            received a letter from LAPIXA, or one of our lawyers, this means
+            we have found the terms of the license have been breached and
+            therefore the license is automatically and immediately terminated.
+        </p>
+        <p>
+            <strong>How do I avoid copyright infringement in future? 
+            </strong>
+        </p>
+        <p>
+            The general rule of thumb here is to ensure that licenses are held for all content
+            posted on your website. Always contact the copyright holder,
+            or its agent, for permission to use the image before publishing
+            it.
+        </p>
+    </div>
+</div>
+<div Style="margin-Top:30px;
+                        bottom: 30px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%; position:fixed;bottom: 0px;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aor2&oid=00D7F000000xS21&lastMod=1528445622000"/>
+                </div>
+</body>
+</html>
+</apex:page>

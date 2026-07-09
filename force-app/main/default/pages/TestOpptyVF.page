@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" renderAs="pdf">
+    <html>
+        <head>
+            
+        </head>
+        <body>
+                <div style="clear: both;"></div>
+                <div style="position: absolute; z-index: 999; margin: 0 auto; left: 210px; right: 0; top: 275px; page-break-after:auto;">
+                    {!Opportunity.Name}
+                </div>
+            <div style="page-break-after:avoid text-align:center;">
+                <apex:image url="{!URLFOR($Resource.ComboInvoice,'/FinalInvoice/Invoice_l1.jpg')}" height="930" />
+            </div>
+        </body>
+    </html>
+</apex:page>

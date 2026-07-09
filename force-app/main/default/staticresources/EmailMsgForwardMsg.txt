@@ -1,0 +1,2 @@
+{"email_message":"---------- Forwarded message ----------\nFrom: Test test <test@test.com>\nDate: Thu, Apr 19, 2018 at 8:07 PM\nSubject: test test\nTo: Test Test <test@test.com>"
+ }

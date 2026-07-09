@@ -1,0 +1,3 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes">
+    <lightning:container src="https://anveshsingh417-dev-ed.lightning.force.com/lightning/r/Report/00O7F00000AtjAxUAJ/view?queryScope=userFolders"/>
+</aura:component>

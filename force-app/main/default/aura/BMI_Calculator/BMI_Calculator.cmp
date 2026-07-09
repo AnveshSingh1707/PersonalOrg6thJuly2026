@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="height" type="Integer"/>
+    <aura:attribute name="weight" type="Integer"/>
+    <aura:attribute name="result" type="Integer"/>
+    <lightning:input type="Number" value="{!v.height}" name="height" label="Height"/>
+    <lightning:input type="Number" value="{!v.weight}" name="weigh" label="Weight"/><br/>
+    <lightning:button variant="brand" label="Calculate BMI" onclick="{!c.CalculateBMI}"/>
+    <div>Yor BMI is:
+        <ui:outputNumber value="{!v.result}"/>
+    </div>
+    
+    
+</aura:component>

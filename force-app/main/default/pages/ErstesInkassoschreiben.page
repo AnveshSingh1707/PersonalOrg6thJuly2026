@@ -1,0 +1,214 @@
+<apex:page sidebar="false" showHeader="false" docType="html-5.0" renderAs="pdf">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+        
+    </head>
+    <body>
+        <div style="font-size: 12px; page-break-after: always;">
+            <div>
+                <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"/>
+                
+            </div>
+            <div>
+                <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"/>
+            </div>
+            <br/><br/><br/><br/>
+                <p>
+                    <strong>{Opportunity.Infringer__c}</strong>
+                </p>
+                <p>
+                    <strong>{Opportunity.Street__c}</strong>
+                
+                    <br/>
+                    <strong>{Opportunity.Zipcode__c}&nbsp; {Opportunity.City__c}</strong>
+                </p>
+                <p align="right">
+                    <strong>{Opportunity.Date_First_Letter_Sent__c}</strong>
+                </p>
+                <p>
+                    <strong><em><u>per E-Mail: </u></em></strong>
+                    <strong>{Opportunity.Email__c}</strong>
+                    <strong><em><u></u></em></strong>
+                </p>
+                <p>
+                    <strong><u></u></strong>
+                </p>
+                <p>
+                    <strong>
+                        <u>Unberechtigte Nutzung von Fotowerken auf ihrer Webseite</u>
+                    </strong>
+                </p>
+                <p>
+                    <strong><u>Unser Auftraggeber: </u></strong>
+                    <strong>{Opportunity.AccountId}</strong>
+                    <strong><u></u></strong>
+                </p>
+                <p>
+                    <strong><u>LAPIXA Aktenzeichen: </u></strong>
+                    <strong>{Opportunity.LAPIXA_Case_ID__c}</strong>
+                    <strong><u></u></strong>
+                </p>
+                <p>
+                    <strong></strong>
+                </p>
+                <p>
+                    Sehr geehrte Damen und Herren,
+                </p>
+                <p>
+                    wir kontaktieren Sie aufgrund der unberechtigten Nutzung eines Lichtbildes
+                    unseres Auftraggebers Hamid Sardar.
+                </p>
+                <p>
+                    Als weltweit tätiges Dienstleistungsunternehmen sind wir mit der
+                    technischen und rechtlichen Überwachung der Lichtbilder und Lichtbildwerke
+                    sowie der Bildrechte unseres Auftraggebers beauftragt.
+                </p>
+                <p>
+                Unsere automatische Bildersuche hat auf Ihrer Webseite unter der URL „   <strong>{Opportunity.Infringement_Found_URL__c}</strong>“ ein Lichtbild unseres
+                    Auftraggebers entdeckt.
+                </p>
+                <p>
+                    Die Gegenüberstellung von Originalbild und Fundstelle auf Ihrer Webseite
+                    können Sie dem anliegenden Screenprint (Anlage 1) entnehmen.
+                </p>
+                <p>
+                    Eine Zustimmung zur Nutzung und Verbreitung dieses Lichtbildes durch uns
+                    bzw. unseren Auftraggeber liegt nach unserem Kenntnisstand nicht vor.
+                </p>
+                <p>
+                    Sollten Sie eine Lizenz zur Nutzung erworben haben, bitten wir um
+                    unverzügliche Übersendung eines entsprechenden Nachweises, dass Sie zur
+                    Nutzung des Lichtbildes berechtigt sind. In diesem Fall können wir unsere
+                    Datenbank aktualisieren, den Auftraggeber informieren und werden die
+                    rechtliche Verfolgung einstellen.
+                </p>
+                <p>
+                    Sollte eine solche Nutzungsberechtigung nicht nachgewiesen werden können,
+                    sind wir bereit, uns gegen Zahlung von Schadensersatz für die vergangene
+                    Nutzung außergerichtlich zu einigen.
+                </p>
+                <p>
+                    Als Schadensersatz wird auf Basis einer Lizenzanalogie das zugrunde gelegt,
+                    was der üblichen Lizenzierungspraxis unseres Auftraggebers entspricht.
+                </p>
+                <p>
+                    Für das von Ihnen genutzte Lichtbild wäre auf Basis der „Bildhonorare der
+                    Mittelstandsgemeinschaft Foto-Marketing“ (MFM, 2018) daher folgender
+                    Schadensersatz zu entrichten:
+                </p>
+                <p>
+                    Lichtbild gem. Anlage
+                </p>
+                <ul>
+                    <li>
+                Online-Nutzung seit <strong>{Opportunity.wayback_date__c</strong>        <strong>{Opportunity.FotoQuote_Estimate__c}</strong>
+                    </li>
+                    <li>
+                Unterlassener Bildquellennachweis : Zuschlag 100 %         <strong>{Opportunity.FotoQuote_Estimate__c}</strong>
+                    </li>
+                </ul>
+                <p>
+                Der sich hieraus errechnende Schadensersatz beträgt insgesamt     <strong>{Opportunity.Forderungssumme__c}</strong>
+                </p>
+                <div Style="margin-Top: 50px;
+                        bottom: 0px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000ap7e&oid=00D7F000000xS21&lastMod=1528701486000"/>
+                </div>
+                </div>
+                <div style="font-size: 12px;">
+                    <div>
+                        <div>
+                            <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aoJJ&oid=00D7F000000xS21&lastMod=1528365510000"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                        <div>
+                            <img align="right" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000aofF&oid=00D7F000000xS21&lastMod=1528433082000"/>
+                        </div>
+                    </div>
+                <p>
+                    <br/>
+                    Ferner sind Sie zur Erstattung der entstandenen Inkassogebühren
+                    verpflichtet.
+                </p>
+                <p>
+                    Gegenstandswert: <strong>{Opportunity.Forderungssumme__c}</strong>
+                </p>
+                <p>
+                0,5 Geschäftsgebühr gem. § 13 RVG, Nr. 2300 VV RVG     <strong>{Opportunity.LAPIXA_Inhouse_Fee__c}</strong><strong></strong>
+                </p>
+                <p>
+                    Dokumentationskosten LAPIXA <strong>{Opportunity.Documentation_Costs__c}</strong>
+                </p>
+                <p>
+                Gesamtbetrag <strong></strong><strong>{Opportunity.Claim_Amount__c}</strong><strong></strong><strong></strong>
+                </p>
+                <p>
+                    Den Eingang der Gesamtsumme erwarten wir binnen 14 Tagen auf folgendem
+                    Konto:
+                </p>
+                <p>
+                    LAPIXA GmbH
+                </p>
+                <p>
+                    IBAN: DE39100100100874524108
+                </p>
+                <p>
+                    BIC/Swift-Code: PBNKDEFF
+                </p>
+                <p>
+                Verwendungszweck: <strong><u></u></strong>    <strong>{Opportunity.LAPIXA_Case_ID__c}</strong>
+                </p>
+                
+                <p>
+                    Die fristgemäße Zahlung legitimiert lediglich die vergangene Nutzung des
+                    Lichtbildes. Sie sind also verpflichtet, das betroffene Lichtbild umgehend
+                    aus dem Netz zu nehmen sowie von Ihrer Webseite und von sämtlichen
+                    Datenträgern und Medien zu löschen.
+                </p>
+                <p>
+                    Sollten Sie an einer weitergehenden Nutzung des Bildes interessiert sein,
+                    freuen wir uns über eine entsprechende Nachricht, um die konkreten
+                    Lizenzbedingungen anhand der geplanten Nutzung zu besprechen.
+                </p>
+                <p>
+                    Sollten wir innerhalb der gesetzten Frist keine Antwort erhalten, weisen
+                    wir Sie hiermit ausdrücklich daraufhin, dass ab dem nächsten Schreiben
+                    höhere Inkassogebühren, Mahnkosten sowie Verzugszinsen in Rechnung gestellt
+                    werden.
+                </p>
+                <p>
+                    Für Rückfragen stehen wir Ihnen telefonisch unter 030 208 984 210 und per
+                Mail unter    <a href="mailto:nachlizenzierung@lapixa.de">nachlizenzierung@lapixa.de</a>
+                    zur Verfügung.
+                </p>
+                <p>
+                    Bitte verwenden Sie bei jeglicher Korrespondenz das obenstehende
+                    Aktenzeichen.
+                </p>
+                <p>
+                    Mit freundlichen Grüßen,
+                </p>
+                <p>
+                    <img width="78" height="30" align="left" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000ap7U&oid=00D7F000000xS21&lastMod=1528700067000"
+                    />
+                </p>
+                
+                <p style="clear:both;">
+                    <span align="left">Serge Licht, Geschäftsführer</span>
+                </p>
+        </div>
+        <div Style="margin-Top:250px;
+                        bottom: 0px;
+                        height: 15%;
+                        width: 100%;
+                        float-left;">
+                <img  style="width: 100%;" src="https://anveshsingh417-dev-ed--c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000ap8I&oid=00D7F000000xS21&lastMod=1528702645000"/>
+        </div>
+    </body>
+</html>
+</apex:page>

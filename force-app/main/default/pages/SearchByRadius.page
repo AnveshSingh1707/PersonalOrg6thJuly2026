@@ -1,0 +1,29 @@
+<apex:page docType="html-5.0"  Controller="ContactsNearByRadius">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8I5kKWt3hHEFuNNJZfLsqqkh7R7n0NQk&libraries=places">
+    
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:input type="text" label="Name" value="{!name}" id="contactName"/>
+                <apex:input type="number" value="{!radius}" id="radius" label="Radius" html-placeholder="in Kms"/>
+                <apex:selectList label="Mode" size="1" >
+                    <apex:selectOption itemLabel="City" id="city" itemValue="City"></apex:selectOption>
+                    <apex:selectOption itemLabel="ZipCode" itemValue="ZipCode" id="zipcode"></apex:selectOption>    
+                </apex:selectList>
+             
+                <apex:inputText id="zipcodeOrCity" html-placeholder="ZipCode or City" value="{!zipCodeOrCity}" label="City or ZipCode" />
+                <div align="center" dragable="false">
+                    <apex:commandButton value="Search" action="{!searchAccordingTOZipCode}" />
+                </div>
+            </apex:pageBlockSection>
+            
+            <!-- Output --->
+            <apex:pageBlockTable value="{!lstContact1}" var="cont">
+                <apex:column value="{!cont.FirstName}"/>
+                <apex:column value="{!cont.LastName}"/>
+                <apex:column value="{!cont.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

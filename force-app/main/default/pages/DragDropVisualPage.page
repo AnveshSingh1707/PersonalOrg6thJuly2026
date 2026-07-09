@@ -1,0 +1,6 @@
+<apex:page standardController="Account" docType="html-5.0" >
+    <apex:message >
+    
+    </apex:message>
+    <c:DragDrop parentId="{!$CurrentPage.parameters.id}" DragDropHeight="100px" />
+</apex:page>

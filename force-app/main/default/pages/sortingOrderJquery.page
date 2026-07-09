@@ -1,0 +1,33 @@
+<apex:page standardController="Account">
+<apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/js/jquery.tablesorter.min.js" />
+<apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/css/theme.green.css" />
+<apex:datatable value="{!Account}" var="acc" id="accsTable" styleclass="tablesorter">
+  <apex:column headerValue="Created">
+    <apex:outputText value="{0, date, dd/MM/yyyy}">
+      <apex:param value="{!acc.CreatedDate}" />
+    </apex:outputText>
+  </apex:column>
+  <apex:column headerValue="Name">
+    <apex:outputField value="{!Account.Name}" />
+  </apex:column>
+  <apex:column headerValue="Street">
+    <apex:outputField value="{!Account.BillingStreet}" />
+  </apex:column>
+  <apex:column headerValue="City">
+    <apex:outputField value="{!acc.BillingCity}" />
+  </apex:column>
+  <apex:column headerValue="State">
+    <apex:outputField value="{!acc.BillingState}" />
+  </apex:column>
+  <apex:column headerValue="Postcode">
+    <apex:outputField value="{!acc.BillingPostalCode}" />
+  </apex:column>
+</apex:datatable>
+  <script>
+  $(document).ready(function()
+  {
+    $("[id$='accsTable']").tablesorter({theme: 'green', dateFormat : "dd/mm/yyyy"});
+  });
+</script>
+</apex:page>

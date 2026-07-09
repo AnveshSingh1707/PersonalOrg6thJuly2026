@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:appHostable,force:hasRecordId">
+
+    <aura:attribute name="options" type="List" default="[{'label':'Liverpool','value':'123'},
+                                                         {'label':'Real Madrid','value':'234'},
+                                                         {'label':'Chelsea','value':'345'},
+                                                         {'label':'Spurs','value':'456','disabled': true},
+                                                         {'label':'Everton','value':'567'}]" />
+    <aura:attribute name="selectedValues" type="List" default="" description="Selected value in Multi Select" />
+    <aura:attribute name="allowedSelections" type="integer" default="3"/>
+
+    <c:MultiSelectCombobox options="{!v.options}" values="{!v.selectedValues}" multiSelect="true" label="Multi Select Combobox" numberOfSelections="{!v.allowedSelections}"/>
+    
+</aura:component>

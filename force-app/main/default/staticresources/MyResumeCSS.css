@@ -1,0 +1,10 @@
+#overview {
+    border-top: 1px solid grey;
+    margin: 5px 0px;
+}
+.objective_span {
+    margin-top: 10px !important;
+}
+.overview_li .overview_span .summary_span .Certifications_li .Certifications_span .skillSet_Span{
+	font-weight: 400;
+}

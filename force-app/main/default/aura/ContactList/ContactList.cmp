@@ -1,0 +1,46 @@
+<aura:component controller="ContactController" implements="flexipage:availableForRecordHome,force:appHostable,force:hasRecordId">
+    <aura:handler event="c:SearchKeyChange" action="{!c.searchKeyChange}"/>
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:attribute name="recordId" type="Account"/>
+    <aura:attribute name="record" type="Account"/>
+    <aura:attribute name="simpleRecord" type="Account"/>
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-page-header slds-box slds-theme--default slds-container--small" role="banner">
+        <h2 class="slds-truncate slds-text-heading_small" >RELATED CONTACTS</h2>
+        <c:SearchBar />
+        <ul class="list-group">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Contact Name">Contact Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Contact Phone">Contact Phone</div>
+                        </th>
+                    </tr>
+                   <aura:iteration items="{!v.contacts}" var="contact">
+                        <tr>
+                            <td>
+                                <a href="{!'/'+contact.Id}">
+                                        {!contact.Name} 
+                                </a>
+                            </td>
+                            <td>
+                                 <!-- <a href="{! '/' + contact.Id }">-->
+                                        {!contact.Phone}
+                                  <!--</a> -->
+                            </td>
+                        </tr>
+                  </aura:iteration>
+               </thead>
+           </table>
+       </ul>
+   </div>
+</aura:component>

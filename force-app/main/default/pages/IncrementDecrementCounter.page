@@ -1,0 +1,14 @@
+<apex:page controller="countIncDecController">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:actionSupport event="onclick" rerender="countOutput"/>
+            <span><apex:commandLink action="{!IncrementCounter}"> Click here to Increment the counter</apex:commandLink></span>
+            <span><apex:commandLink action="{!DecrementCounter}">Click here to Decrement the counter</apex:commandLink></span>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            <apex:outputText id="countOutput" value="{!count}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

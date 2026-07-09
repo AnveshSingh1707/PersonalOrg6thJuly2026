@@ -1,0 +1,10 @@
+<aura:component controller="ContactController" implements="flexipage:availableForRecordHome,force:appHostable,force:hasRecordId">
+    <div class="slds-box">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="text-input-id-1">Search</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="text-input-id-1" onkeyup="{!c.searchKeyChange}" class="slds-input" placeholder="Search For Related Contacts" />
+            </div>
+        </div>
+    </div>
+</aura:component>

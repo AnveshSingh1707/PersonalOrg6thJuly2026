@@ -1,0 +1,37 @@
+<apex:page standardcontroller="Case" lightningStylesheets="true" extensions="CaseRecordFetcher" >
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <apex:slds rendered="{! !isClassic}" />
+    <span class="slds-icon_container slds-icon-standard-email" title="Last Replies">
+      <svg class="slds-icon" aria-hidden="true">
+        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#email')}">
+        </use>
+      </svg>
+      <span class="slds-assistive-text">Email
+      </span>
+    </span>
+    <apex:repeat value="{!Case}" var="cm">
+      <table  style="width:100%;padding: 10px ; line-height: 14px; font-family: 'Roboto',Verdana,Arial,sans-serif; font-size: 12px; color:#5b5889;">
+        <tr>
+          <td style="color: #b5b5b5;">--- Please type your reply above this line ---
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br/>Your support case {!cm.CaseNumber} has been updated.The last replies for the case are.
+            <br/>
+            <br/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <c:CaseFeedItemComponent parentCase="{!cm.Id}" />
+          </td>
+        </tr>
+        <tr>
+          <td style="color: #b5b5b5;padding-top:10px;border-top:1px dotted #c5c5c5">This email is a service of Mesosphere, Inc.
+          </td>
+        </tr>
+      </table>
+    </apex:repeat>
+  </html>
+</apex:page>

@@ -1,0 +1,77 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <apex:form >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Salesforce Lightning Design System Trailhead Module</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Import the Design System style sheet -->
+        <apex:slds />
+    </head>
+    <body>
+        <!-- REQUIRED SLDS WRAPPER -->
+        <div class="slds-scope">
+            <!-- MASTHEAD -->
+            <p class="slds-text-heading--label slds-m-bottom--small">
+                Salesforce Lightning Design System Trailhead Module
+            </p>
+            <!-- / MASTHEAD -->
+            <!-- PAGE HEADER -->
+            <!-- PAGE HEADER -->
+                <div class="slds-page-header" role="banner">
+                  <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                      <!-- HEADING AREA -->
+                      <p class="slds-text-title--caps slds-line-height--reset">Accounts</p>
+                      <h1 class="slds-page-header__title slds-truncate" title="My Accounts1">My Accounts</h1>
+                      <!-- / HEADING AREA -->
+                    </div>
+                    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                      <button class="slds-button slds-button--neutral">New Account</button>
+                    </div>
+                  </div>
+                  <div class="slds-grid">
+                    <div class="slds-col slds-align-bottom slds-p-top--small">
+                      <p class="slds-text-body--small page-header__info">COUNT items</p>
+                    </div>
+                  </div>
+                </div>
+<!-- / PAGE HEADER -->
+             <div class="slds-page-header">
+            <div class="slds-grid">
+            <div class="slds-col">
+            <apex:pageBlock >
+                 <apex:pageBlockSection >
+                     <div class="slds-form-element__control">
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                            <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search" />
+                            </svg>
+                        <input type="text" id="text-input-id-1" class="slds-input" placeholder="Placeholder Text" />
+                    </div>
+                    </div>
+                 </apex:pageBlockSection>
+            </apex:pageBlock>
+            </div>
+            
+            <div class="slds-col slds-align-top slds-no-flex slds-grid">
+                <apex:commandButton styleClass="slds-button slds-button_neutral" value="Search"/>
+            </div>
+            </div>
+            </div>
+            <!-- / PAGE HEADER -->
+            <!-- PRIMARY CONTENT WRAPPER -->
+            <div class="myapp">
+            </div>
+            <!-- / PRIMARY CONTENT WRAPPER -->
+            <!-- FOOTER -->
+            <!-- / FOOTER -->
+        </div>
+        <!-- / REQUIRED SLDS WRAPPER -->
+        <!-- JAVASCRIPT -->
+        <!-- / JAVASCRIPT -->
+    </body>
+    </html>
+    </apex:form>
+</apex:page>

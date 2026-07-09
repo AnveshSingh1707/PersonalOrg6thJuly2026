@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  title="Hello">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+        <div class="slds-p-horizontal_small">
+            <!-- <div class="slds-p-around_medium lgc-bg"> -->
+                <lightning-input type="text" label="Account Name" value={accountName}></lightning-input>
+            <!-- </div> -->
+            </div>
+        <div class="slds-m-top_large slds-align_absolute-center">
+            <lightning-button variant="destructive" label="Destructive" title="Destructive action" onclick={handleDestructiveClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

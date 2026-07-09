@@ -1,0 +1,5 @@
+<apex:page docType="html-5.0">
+    <apex:form >
+    	Name: <apex:input type="text"/>
+    </apex:form>
+</apex:page>

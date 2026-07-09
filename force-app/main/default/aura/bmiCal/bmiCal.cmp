@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" >
+    <aura:attribute name="height" type="Decimal"/>
+    <aura:attribute name="weight" type="Decimal"/>
+    <aura:attribute name="result" type="Decimal"/>
+    <aura:attribute name="consideration" type="string"/>
+    <div class="slds-page-header slds-box slds-theme--default slds-container--small" role="banner">BMI CALCULATOR
+        <lightning:input type="Number" value="{!v.height}" label="Height(in meters)" name="height"  step="0.01" class="heightId"/>
+        <lightning:input type="Number" value="{!v.weight}" name="weigh" label="Weight(in kgs)"  step="0.01" class="weightId"/><br/>
+        <lightning:button variant="brand" label="Calculate BMI" onclick="{!c.CalculateBmi}"/><br/><br/>
+        <div>Yor BMI is:
+            {!v.result}
+        </div>
+        <div>This is Considered as:
+            {!v.consideration}
+        </div>
+    </div>
+    
+    
+</aura:component>
